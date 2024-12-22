@@ -1,6 +1,7 @@
 import express from 'express';
+import 'dotenv/config'
 const app=express();
-const port=3000;
+const port=process.env.PORT||3000;
 app.use(express.json());
 let teaData=[];
 let nextId=1;
@@ -27,15 +28,7 @@ app.get('/teas',(req,res)=>{
     res.status(200).send(teaData);
 })
 
-// app.get('/',(req,res)=>{
-//     res.send("Hello from Saumil");
-// })
-// app.get('/ice-tea',(req,res)=>{
-//     res.send("Hello from Tea");
-// })
-// app.get('/login',(req,res)=>{
-//     res.send("Hello from Login");
-// })
+
 
 
 
